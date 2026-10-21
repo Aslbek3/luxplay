@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#120f24">
+<title>LUXPLAY — o'yinchilar uchun yagona platforma</title>
+<meta name="description" content="LUXPLAY — o'yinlar, do'stlar, ovozli xonalar, profillar va sovg'alar bir ilovada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="appbar" id="appbar">
+    <div class="brand-row">
+      <div class="brand">
+        <span class="brand-mark">L</span>
+        <span class="brand-text">
+          <b>LUXPLAY</b>
+          <small>O'yinchilar uchun</small>
+        </span>
+      </div>
+      <button type="button" class="pill" id="coins-pill">
+        <span class="pill-icon">💎</span>
+        <span id="coins-label">0</span>
+      </button>
+    </div>
+
+    <div class="hero-body" id="hero-body">
+      <h1>Birga o'ynaymiz</h1>
+      <p class="hero-sub">O'yinlar, ovozli xonalar va do'stlar — bir joyda.</p>
+      <form id="search-form" class="searchbar">
+        <input type="text" id="search-input" placeholder="O'yin qidirish...">
+        <button type="submit">Qidirish</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="view-wrap">
+
+    <!-- O'YINLAR -->
+    <section id="view-home" class="view active">
+      <div class="promo" id="promo"></div>
+
+      <div class="tabs" id="genre-tabs"></div>
+
+      <div class="section-head">
+        <h2>O'yinlar</h2>
+        <span class="section-note" id="games-count"></span>
+      </div>
+      <div id="game-grid" class="game-grid"></div>
+    </section>
+
+    <!-- OVOZLI XONALAR -->
+    <section id="view-rooms" class="view">
+      <div class="section-head">
+        <h2>Ovozli xonalar</h2>
+        <span class="section-note" id="rooms-count"></span>
+      </div>
+      <p class="note">Demo rejim: haqiqiy ovoz uzatilmaydi, faqat xonaga kirish holati ko'rsatiladi.</p>
+      <div id="room-list" class="card-list"></div>
+    </section>
+
+    <!-- DO'STLAR -->
+    <section id="view-friends" class="view">
+      <div class="section-head">
+        <h2>Do'stlar</h2>
+        <span class="section-note" id="friends-count"></span>
+      </div>
+      <div id="friend-list" class="card-list"></div>
+    </section>
+
+    <!-- PROFIL -->
+    <section id="view-profile" class="view">
+      <div class="section-head">
+        <h2>Profil</h2>
+      </div>
+      <div id="profile-view"></div>
+    </section>
+
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-view="home"><b>🎮</b><span>O'yinlar</span></button>
+    <button class="nav-btn" data-view="rooms"><b>🎙</b><span>Xonalar</span></button>
+    <button class="nav-btn" data-view="friends"><b>👥</b><span>Do'stlar</span></button>
+    <button class="nav-btn" data-view="profile"><b>👤</b><span>Profil</span></button>
+  </nav>
+</div>
+
+<!-- O'YIN TAFSILOTI -->
+<div class="modal" id="modal-game">
+  <div class="sheet">
+    <button class="close" data-close-modal>×</button>
+    <div id="game-content"></div>
+  </div>
+</div>
+
+<!-- SOVG'A YUBORISH -->
+<div class="modal" id="modal-gift">
+  <div class="sheet">
+    <button class="close" data-close-modal>×</button>
+    <h3>Sovg'a yuborish</h3>
+    <p class="muted" id="gift-target"></p>
+    <div id="gift-list" class="gift-grid"></div>
+  </div>
+</div>
+
+<!-- PREMIUM -->
+<div class="modal" id="modal-premium">
+  <div class="sheet">
+    <button class="close" data-close-modal>×</button>
+    <div class="premium-head">
+      <span class="premium-icon">👑</span>
+      <h3>LUXPLAY Premium</h3>
+      <p class="muted">Demo rejim: haqiqiy to'lov amalga oshmaydi.</p>
+    </div>
+    <ul class="perk-list">
+      <li>Oltin nik va profil ramkasi</li>
+      <li>Reklamasiz interfeys</li>
+      <li>Har oy 500 💎 sovg'a</li>
+      <li>Ovozli xonada ustuvor joy</li>
+    </ul>
+    <div class="price-row">
+      <b>29 000 so'm</b><span>/oy</span>
+    </div>
+    <button type="button" class="btn btn-primary btn-block" id="premium-buy">Premium olish</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
